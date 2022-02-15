@@ -47,7 +47,7 @@ function randomChoice(){
 
 function getButton(choice){
     const html = `
-        <button class="${choice}">
+        <button class="${choice}" id="large-btn">
             <span class="wrapper">
                 <img src="./images/icon-${choice}.svg" alt="${choice}">
             </span>
@@ -76,19 +76,18 @@ function playGame(userBtn){
     compArea.innerHTML = compChoice;
     let userClass = userArea.firstElementChild.className;
     let compClass = compArea.firstElementChild.className;
-    console.log()
     if(userClass != compClass){
         if(checkWin(userClass,compClass)){
             winMessage.firstElementChild.innerText = 'YOU WIN 🎉';
             winMessage.firstElementChild.style.color = 'greenyellow';
+            userArea.firstElementChild.style.animation = 'win 2s infinite';
             scoreCount++;
         }else{
             winMessage.firstElementChild.innerText = 'YOU LOSE 😭';
             winMessage.firstElementChild.style.color = 'red';
+            compArea.firstElementChild.style.animation = 'win 2s infinite';
             scoreCount--;
         }
-        scoreCount = Math.max(scoreCount,0);
-        console.log(scoreCount);
         updateScore(scoreCount); 
     }else{
         winMessage.firstElementChild.innerText = 'DRAW 😝';

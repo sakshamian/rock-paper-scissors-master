@@ -30,7 +30,7 @@ main{
     display: flex;
     flex-direction: column;
     margin: 2.5rem auto;
-    width: 40rem;
+    width: 45rem;
 }
 .heading-box{
     display: flex;
@@ -123,6 +123,23 @@ h1{
     margin: 15px 35px;
 }
 
+@keyframes win{
+    0% {
+      box-shadow: 0 0 0 .7rem rgba(255, 255, 255, 0.2),
+        0 0 0 1.5rem rgba(255, 255, 255, 0.2),
+        0 0 0 5rem rgba(255, 255, 255, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 1.5rem rgba(255, 255, 255, 0.2),
+        0 0 0 4rem rgba(255, 255, 255, 0.2),
+        0 0 0 8rem rgba(255, 255, 255, 0);
+    }
+}
+#large-btn{
+    width: 180px;
+    height: 180px;
+}
+
 /* rules CSS */
 .rules-section{
     display: flex;
@@ -146,13 +163,15 @@ h1{
     .game-section{
         width: 90vw;
     }
+    .heading-box{
+        padding: 0.5rem 0.5rem;
+    }
     .score-tag{
         letter-spacing: normal;
     }
     .score-box{
-        width: max-content;
+        width: 30%;
     }
-
     .rules-section{
         justify-content: center;
     }
@@ -199,11 +218,7 @@ h1{
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 100px;
-}
-  
-.resultDiv2 {
-    /* display: none; */
+    margin: 100px 0 120px;
 }
   
 .pick1Div, .pick2Div{
@@ -241,6 +256,7 @@ h1{
 }
 .winOrLose h2{
     padding-bottom: 10px;
+    font-size: 2.5rem;
 }
 .playAgainButton{
     padding: 10px 20px;
@@ -251,4 +267,35 @@ h1{
 }
 .playAgainButton:hover, .rules-btn:hover{
     opacity: 0.7;
+}
+
+@media(max-width: 500px){
+    .heading-img img{
+        width: 80%;
+    }
+    .wrapper{
+        width: 100px;
+        height: 100px;
+    }
+    .paper{
+        width: 120px;
+        height: 120px;
+        margin-left: 0;
+        margin-right: 24px;
+    }
+    .scissors{
+        width: 120px;
+        height: 120px;
+        margin-right: 0;
+        margin-left: 24px;
+    }
+    .rock{
+        width: 120px;
+        height: 120px;
+        margin: 8px;
+    }
+    .game-icons::after{
+        margin: auto;
+        left: 0;
+    }
 }
